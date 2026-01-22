@@ -7,18 +7,23 @@ const Footer = () => {
         <footer className="w-full border-t border-doma-border flex justify-center mt-auto bg-doma-dark/30 backdrop-blur-sm">
             <div className="w-full max-w-7xl px-6 py-4">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                    {/* Copyright */}
-                    <div className="flex flex-col items-center md:items-start">
-                        <span className="text-sm font-bold text-white tracking-tight">
-                            SilentPay
-                        </span>
+                    {/* Left: Info */}
+                    <div className="flex flex-col items-center md:items-start flex-1">
+                        <div className="flex items-center gap-2">
+                            <span className="text-sm font-[var(--font-logo)] font-extrabold tracking-tight text-white">
+                                SilentPay
+                            </span>
+                            <span className="text-sm text-white/80 font-medium">
+                                - Powered by <span className="text-[#3673F5] font-bold">Inco Network</span>
+                            </span>
+                        </div>
                         <span className="text-[10px] text-doma-text-muted font-medium mt-1">
-                            © {currentYear} SilentPay. All rights reserved.
+                            © 2026 SilentPay. All rights reserved.
                         </span>
                     </div>
 
-                    {/* Social Icons */}
-                    <div className="flex items-center gap-3">
+                    {/* Right: Social Icons */}
+                    <div className="flex items-center justify-end gap-3 flex-1">
                         <a
                             href="https://x.com/buiminhtoan1985"
                             target="_blank"

@@ -19,6 +19,9 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "SilentPay | Confidential Payroll",
   description: "Secure, private, and compliant payroll management on Inco Network.",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
