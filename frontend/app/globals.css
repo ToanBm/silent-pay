@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000F16;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-urbanist);
+  --font-mono: var(--font-geist-mono);
+  --font-logo: var(--font-outfit);
+
+  /* Doma Design System */
+  --color-doma-dark: #000F16;
+  --color-doma-card: linear-gradient(135deg, rgba(11, 30, 38, 0.8) 0%, rgba(11, 30, 38, 0.4) 100%);
+  --color-doma-blue: #4AC6FF;
+  --color-doma-blue-muted: rgba(74, 198, 255, 0.12);
+  --color-doma-border: rgba(248, 253, 255, 0.1);
+  --color-doma-text-muted: rgba(255, 255, 255, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #262626;
+  }
+}
+
+body {
+  background: linear-gradient(180deg, #061F2A 0%, #000F16 100%);
+  min-height: 100vh;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide navigation arrows for input[type=number] */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
