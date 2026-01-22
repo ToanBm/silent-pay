@@ -168,6 +168,35 @@ contract ConfidentialPayroll {
     }
 
     /**
+     * @notice Owner withdraws cUSDC from payroll balance back to their wallet
+     * @param payrollId Payroll ID
+     * @param encryptedAmount Encrypted amount to withdraw
+     */
+    function withdraw(uint256 payrollId, bytes calldata encryptedAmount) external payable {
+        Payroll storage payroll = payrolls[payrollId];
+        if (payroll.owner != msg.sender) revert NotOwner();
+
+        _requireFee(20);
+
+        euint256 amountToWithdraw = e.newEuint256(encryptedAmount, msg.sender);
+        
+        // Check if payroll has enough balance
+        ebool hasFunds = e.ge(payroll.balance, amountToWithdraw);
+        
+        // Only transfer if hasFunds is true
+        euint256 finalAmount = e.select(hasFunds, amountToWithdraw, e.asEuint256(0));
+
+        // Update balance
+        payroll.balance = e.sub(payroll.balance, finalAmount);
+        e.allow(payroll.balance, address(this));
+        e.allow(payroll.balance, msg.sender);
+
+        // Transfer from contract to owner
+        e.allow(finalAmount, address(cUSDC));
+        cUSDC.transferHandle(msg.sender, finalAmount);
+    }
+
+    /**
      * @notice Employee claims salary from payroll contract balance for a specific period
      * @dev User pays fee
      */

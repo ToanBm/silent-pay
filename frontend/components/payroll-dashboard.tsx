@@ -12,6 +12,7 @@ export default function PayrollDashboard() {
         getTotalSalary,
         fundPayroll,
         addEmployee,
+        removeEmployee,
         withdrawFunds,
         startNewPeriod,
         createPayroll,
@@ -130,7 +131,15 @@ export default function PayrollDashboard() {
 
     const handleRemoveEmployee = async (e: React.FormEvent) => {
         e.preventDefault();
-        toast.info("Remove Employee functionality requires Smart Contract update. Please deploy the updated contract first.");
+        setLoadingAction("removeEmployee");
+        try {
+            await removeEmployee(payrollId, empAddress);
+            toast.success("Employee removed successfully!");
+            setEmpAddress("");
+        } catch (e: any) {
+            toast.error("Remove failed: " + (e.message || e));
+        }
+        setLoadingAction(null);
     };
 
     const handleWithdraw = async (e: React.FormEvent) => {
@@ -453,10 +462,10 @@ export default function PayrollDashboard() {
                                             />
                                             <button
                                                 type="submit"
-                                                disabled={isGlobalLoading}
+                                                disabled={isBusy("removeEmployee")}
                                                 className="w-full h-[56px] bg-doma-blue-muted text-doma-blue rounded-[20px] hover:bg-doma-blue/20 disabled:opacity-50 font-bold transition-colors flex items-center justify-center"
                                             >
-                                                Confirm Remove Employee
+                                                {isBusy("removeEmployee") ? "Removing..." : "Confirm Remove Employee"}
                                             </button>
                                         </form>
                                     )}
