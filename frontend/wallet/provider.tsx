@@ -24,7 +24,7 @@ const WalletProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider>
+        <RainbowKitProvider locale="en-US">
           <IncoProvider>{children}</IncoProvider>
         </RainbowKitProvider>
       </QueryClientProvider>

@@ -9,17 +9,13 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     {/* Left: Info */}
                     <div className="flex flex-col items-center md:items-start flex-1">
-                        <div className="flex items-center gap-2">
-                            <span className="text-sm font-[var(--font-logo)] font-extrabold tracking-tight text-white">
-                                SilentPay
-                            </span>
-                            <span className="text-sm text-white/80 font-medium">
-                                - Powered by <span className="text-[#3673F5] font-bold">Inco Network</span>
-                            </span>
+                        <div className="flex items-center gap-1.5 leading-none px-0.5">
+                            <span className="text-sm font-[var(--font-logo)] font-extrabold tracking-tight text-white">SilentPay</span>
+                            <span className="text-sm text-white/60 font-medium">- Powered by <span className="text-[#3673F5] font-bold">Inco's fhEVM</span></span>
                         </div>
-                        <span className="text-[10px] text-doma-text-muted font-medium mt-1">
-                            © 2026 SilentPay. All rights reserved.
-                        </span>
+                        <div className="text-xs text-doma-text-muted font-medium mt-1 uppercase tracking-wider">
+                            Programmable Privacy secured by FHE technology
+                        </div>
                     </div>
 
                     {/* Right: Social Icons */}

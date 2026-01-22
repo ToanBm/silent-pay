@@ -40,9 +40,13 @@ const FaucetPage = () => {
             });
             await publicClient?.waitForTransactionReceipt({ hash });
             toast.success("Minted 1,000 mUSDC successfully!");
+
+            // Immediate refetch
             refetch();
+
+            // Second refetch after a delay to catch RPC updates
+            setTimeout(() => refetch(), 1500);
         } catch (e: any) {
-            console.error(e);
             toast.error("Mint failed: " + (e.message || e));
         } finally {
             setIsMinting(false);
