@@ -2,7 +2,7 @@
 
 **Confidential & Secure Payroll Management on Inco Network**
 
-SilentPay is a state-of-the-art, privacy-preserving payroll application powered by **Inco Network's FHEVM** (Fully Homomorphic Encryption Virtual Machine). It empowers organizations to manage employee salaries and balances with absolute privacy on-chain, ensuring that sensitive financial data remains encrypted while being trustlessly verifiable.
+SilentPay is a state-of-the-art, privacy-preserving payroll application powered by **Inco Network**, the confidentiality layer of Web3. It leverages **Confidential Computing** to empower organizations to manage employee salaries and balances with absolute privacy on-chain, ensuring that sensitive financial data remains encrypted while being trustlessly verifiable.
 
 ---
 
@@ -24,7 +24,7 @@ SilentPay is built as a decentralized application (dApp) consisting of two main 
 
 ### 1. Smart Contracts (`contracts/`)
 - Developed in Solidity 0.8.30+, leveraging the latest `@inco/lightning` library.
-- **`ConfidentialUSDC.sol`**: An FHE-enabled wrapper for public USDC.
+- **`ConfidentialUSDC.sol`**: A confidential wrapper for public USDC.
 - **`ConfidentialPayroll.sol`**: Manages payroll registration, employee lists, and encrypted salary claims.
 - **Trustless Decryption**: Uses Inco Network Validator signatures for secure, decentralized decryption.
 
@@ -32,7 +32,7 @@ SilentPay is built as a decentralized application (dApp) consisting of two main 
 - **Framework**: Next.js with App Router.
 - **Styling**: Utility-first Tailwind CSS with custom Doma Design tokens.
 - **Wallet**: Integrated with **RainbowKit** and **Wagmi** for seamless Web3 connectivity.
-- **State Management**: Optimized hooks for batch decryption and FHE transaction handling.
+- **State Management**: Optimized hooks for batch decryption and confidential computing transactions.
 
 ---
 
@@ -42,7 +42,7 @@ SilentPay is built as a decentralized application (dApp) consisting of two main 
 
 - **Node.js**: v18.0.0 or higher
 - **Browser Wallet**: Metamask or any RainbowKit supported wallet
-- **Network**: Base Sepolia (for RPC) + Inco Network (for FHE operations)
+- **Network**: Base Sepolia (for RPC) + Inco Network (for Confidential Computing)
 
 ### Installation
 
@@ -77,9 +77,9 @@ SilentPay is built as a decentralized application (dApp) consisting of two main 
 
 ## 📜 Technical Details
 
-- **Chain**: Base Sepolia (L2) + Inco Network (FHE Privacy Layer).
-- **Encryption**: Fully Homomorphic Encryption (FHE) via `fhevm`.
-- **Trust Model**: Cryptographically secure privacy (FHE) + Decentralized trust (Inco Validators).
+- **Chain**: Base Sepolia (L2) + Inco Network (Confidentiality Layer).
+- **Encryption**: Confidential Computing via Inco Lightning.
+- **Trust Model**: Cryptographically secure privacy + Decentralized trust (Inco Validators via TEE/KMS).
 
 ## 🤝 Contribution
 

@@ -18,7 +18,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-12">
             <Link href="/" className="flex items-center gap-3 group">
-              <span className="text-2xl font-[var(--font-logo)] font-extrabold tracking-tight text-white group-hover:opacity-80 transition-opacity">
+              <span className="text-2xl font-[var(--font-logo)] font-extrabold tracking-wide text-white group-hover:opacity-80 transition-opacity">
                 SilentPay
               </span>
             </Link>
